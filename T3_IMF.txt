@@ -1,0 +1,28 @@
+1. open google and search for IMF World Economic outlook data base
+
+2. click on the first available link and in that site under download 
+
+3. click on All countries ,select All and click on continue
+
+4. select subject as GDP current prices by US dollars and 
+click and continue
+
+5. click on prepare Report and copy the URL
+
+6. open powerbi click on get data and select web and 
+double click on the web connector and paste the URL
+
+7. in web view select the required table and click on edit,
+it will opens query editor
+
+8.  Remove unwanted rows in home tab select reduce rows and 
+then remove rows and then select remove top rows and select 
+number of rows as 1 and click on ok
+
+9. To take the first row as a header click on transform tb and 
+select use first row as header
+
+10. In home tab select manage columns,then select remove 
+columns and then select remove columns which will remove the
+ empty columns
+

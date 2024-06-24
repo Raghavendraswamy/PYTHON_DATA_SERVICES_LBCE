@@ -1,0 +1,131 @@
+clustered column chart
+
+orders data
+
+x- axis: sub category
+
+ y-axis
+
+sales
+
+profit
+
+
+Data labels - on
+
+slicer - Region
+-----------------------------------------------------------------------------
+
+Trend Analysis - Line chart
+
+
+Display month wise return quantity
+
+select line chart
+
+drag date in axis
+
+
+select date hierarchy and remove quarter and day and year
+
+
+drag sales in to y axis
+
+
+data labels on
+
+
+also check with profit
+
+
+
+-----------------------------------------------------------------
+
+
+
+pie chart
+
+
+select sales and sub category 
+
+
+
+----------------------------------------------------------------
+
+
+combination chart      using Line and Bar
+
+
+line and clustered column chart
+
+
+x- axis order date month
+
+
+column y axis  sales , profit
+
+line y axis    sales , profit
+
+
+
+data labels  on
+
+series labels  on
+
+
+
+----------------------------------------
+
+
+To compare current year sales with previous year sales for each region
+
+
+
+1. create new measure Total.sales
+
+Total.Sales= Sum(Orders[Sales])
+
+2. Drag region in to rows and order date in to columns keep only year
+
+
+3. Drag Total.Sales into values
+
+4. create a new measure PY.values
+
+PY.Sales=CALCULATE([TOTAL.Sales],PREVIUOSYEAR(Orders[Order Date].[Date]))
+
+5. create a new table drag  Py.sales and Total.sales in to values 
+
+Order date- Year into Axis
+
+
+6. select slicer into view and drag region into slicer
+
+7. default view will be in Text , Use line chart in the viz
+
+
+8. select any region to filter based on region selection
+
+9.  copy the line chart and paste it beside and change it to bar chart
+
+
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

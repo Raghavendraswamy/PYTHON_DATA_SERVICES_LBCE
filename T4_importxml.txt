@@ -1,0 +1,10 @@
+1. click on get data then click on xml
+
+2. connect to the .xml and click on edit to open the query editor
+
+3. it will display first level and for the below levels it displays as table
+
+4. click on "expand" <> button for every table to get all the levels complete data.
+
+5. click on close and apply and check the data.
+

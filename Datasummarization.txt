@@ -1,0 +1,331 @@
+working with  Data summarization by DAX Expressions
+
+Single out put value   Dax --- New Measure
+
+Table out put value    Dax  ---   Modeling---> New Table
+
+
+
+
+output
+--------
+Table               Modeling---> New Table
+Single value    Newmeasure
+
+
+
+group by
+
+after calculate sum,avg,max,min...
+
+Take a option  new table
+
+
+
+
+
+
+citywisesales = 
+
+SUMMARIZE(Orders,
+Orders[city],
+"Totalsales",SUM(Orders[Sales])
+"
+
+
+
+No of orders 
+Max sales
+
+
+---------------------------------------------
+
+
+
+compute region wise total sales and total profit
+compute segment wise Total sales
+
+
+
+
+-------------------------------
+No of Males
+No of Females
+No of Male smokers
+No of Female smokers
+Total bill Male
+Female Total Bill
+Male Total Tip
+Female Total tip
+Male smoker Total Bill
+Female smoker Total bill
+
+
+---
+--
+
+day wise Total customers       chart
+day wise no males no females    chart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Write a DAX  to compute 
+region wise totalsales,totalprofit
+
+SUMMARIZE(Orders,Orders[Region],
+"Totalsales",SUM(Orders[Sales]),
+"Totalprofit",SUM(Orders[Profit])
+)
+
+
+
+
+working with conditions/filters in DAX
+
+summary1 = SUMMARIZE(Orders,Orders[city],
+"Totalsales",SUM(Orders[Sales]),
+"Max sales", MAX(Orders[Sales]),
+"Min sales", MIN(Orders[Sales]) 
+)
+
+
+
+
+
+
+
+
+
+
+
+
+Table 2 = SUMMARIZE(Orders,Orders[City],
+"sum of sales",SUM(Orders[Sales]),
+"max sales",MAX(Orders[Sales]),
+"min sales",MIN(Orders[Sales]))
+
+
+
+
+summarize orders data by region wise  and display 
+sum of sales, minimum sale, maximum sale in column chart
+
+-----------------------------------------------------------------------
+Two-level grouping / Advanced grouping
+
+Perform Data grouping on orders data
+at the city level and Region level 
+get total sales and  total profit
+
+summarize2 = 
+SUMMARIZE(Orders,Orders[City],Orders[Region],
+"totsales",sum(Orders[Sales]),
+"totprofit",sum(Orders[Profit]))
+
+
+
+
+
+-----------------------------------------------------------------------------------
+group by city  and calculate totalprofit where
+sum of  sales  value greater than 20000
+
+
+summarize3 = SUMMARIZE(Orders,Orders[City],
+
+"totsales",sum(Orders[Sales])>20000,"totprofit",sum(Orders[Profit]))
+
+
+-----------------------------------------------------------------------------------
+
+
+
+CALCULATE TABLE:
+based on filters 
+syntax:
+
+CALCULATETABLE(TABLE,[FILTER1],[FILTER2],....)
+
+result=CALCULATETABLE(Orders,Orders[City]="Los Angeles",
+Orders[Sales]>3000)
+
+
+
+----------------------------------------------------------------------
+
+
+working with filters:
+
+Get data only consumer segment and  in central ,South regions, 
+with quantity > 10  and in first class Ship Mode.
+
+Result=CALCULATETABLE(Orders,
+Orders[Segment]="Consumer",
+Orders[Region] in {"Central","South"},
+Orders[Ship Mode]="First class",
+Orders[Quantity] >10)
+
+
+
+
+
+-------------------------------------------------------------------------
+Display Top 10 customers from 
+Los Angeles , New York City ,Dublin
+by profit wise
+
+1. extract customernames and profit LosAngeles
+2. extract customernames and profit New York City
+3. extract customernames and profit Dublin
+4. query out puts and convert in to Tables
+5. Merge all Three Tables as      Append Query as New
+6. Remove Dupicate customers
+7. sort profit Highest to lowest
+8. Keep Top 10 customers only
+
+
+
+
+
+
+
+
+combine All the customers into Single Table
+using append query 
+
+
+LAcustomers= SELECTCOLUMNS(
+CALCULATETABLE(
+Orders,Orders[City]="Los Angeles"),
+ "Cust Name",Orders[Customer Name],
+ "Profits",Orders[Profit])
+
+
+
+
+
+
+
+
+
+
+
+
+Ncity=SELECTCOLUMNS(
+CALCULATETABLE(
+Orders,Orders[City]="New York City"), 
+ "Cust Name",Orders[Customer Name],
+   "Profits",Orders[Profit])
+
+
+
+
+
+Dcity=SELECTCOLUMNS(CALCULATETABLE(
+Orders,Orders[City]="Dublin"),  
+"Cust Name",Orders[Customer Name],
+   "Profits",Orders[Profit])
+
+
+
+
+
+
+
+
+
+
+
+convert query out puts in to table as export data
+
+Again load all the exported data in to power Bi
+
+-
+
+Remove duplicates in customer names
+
+sort data by profit  High to low
+
+Keep top 10 customers only
+
+
+
+
+finally display out put
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
+click New Measure and perform calculations
+
+create three measures on above three tables
+
+Total.profits(Los Angeles)=SUM('Los Angeles'[Profits])
+Total.profits(New York City)=SUM('New York City'[Profits])
+Total.profits(Dublin)=SUM('LAcustomers'[Dublin])
+
+
+Display column chart
+-------------------------------------------------------
+
+
+
+
+
+
+
+
+

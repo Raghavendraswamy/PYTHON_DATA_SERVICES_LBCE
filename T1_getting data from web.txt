@@ -1,0 +1,31 @@
+1. open web and search for 
+"Indian states and capitals" click on proper search link 
+and copy the URL
+
+2. in power bi click on get data and then search for
+ "web" and paste the URL
+
+3. select the required tables from the web and click and load
+
+4. in visualization select "table" and place the required 
+field nto the values and check output on focus
+
+
+
+
+Task:
+
+https://www.worldometers.info/world-population/population-by-country/
+
+
+
+
+
+
+
+
+
+
+
+
+

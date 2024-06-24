@@ -1,0 +1,13 @@
+ODATA stands for Open Data Protocol
+
+1. click on get data and search for "ODATA" and double click on it
+
+2. in web search "North Wind dataset ODATA feed" and click on first search and copy the url
+and paste the url into ODATA connector in power bi
+
+3. select the customer,employees and order invoice tables and click on load
+
+
+4. explore visulaization
+
+

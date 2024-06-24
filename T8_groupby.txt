@@ -1,0 +1,23 @@
+Grouping / Roll Up operation
+
+create a text file and load the data
+
+PRODUCT,TRXN_DATE,SALES
+A,11-FEB-2019,120
+A,11-FEB-2019,140
+B,11-FEB-2019,200
+B,11-FEB-2019,120
+
+open in query editor
+
+click on transform tab and then select group by and group by product
+
+enter new column name as tot sales 
+
+click ok
+
+----------------------------------------------
+
+
+
+

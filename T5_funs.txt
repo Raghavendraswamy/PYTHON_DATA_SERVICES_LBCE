@@ -1,0 +1,16 @@
+Round(12.1234,2)
+Round(12.1254,2)
+
+Is Even(10)
+
+Is Even(11)
+
+Is Odd(9)
+
+SIGN(-9)
+
+Round Up(12.34)
+
+Round Down(12.12)
+
+
