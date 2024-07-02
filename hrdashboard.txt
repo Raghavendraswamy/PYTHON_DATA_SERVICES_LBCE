@@ -1,0 +1,13 @@
+1. overall employees count
+2. Attrition count
+3. Attrition rate     attrition count / employee count
+4. current emp count   emp count - attrition count
+5. Average Age
+6. Department wise Attrition count
+7. Age band wise employee count
+8. Matrix chart rows:job role cols:job satisfaction values: emp count
+9. stacked bar education filed wise emp count
+10. Donut chart gender wise emp count
+11. Donut chart gender wise attrition rate
+12. age group wise attrition rate
+
